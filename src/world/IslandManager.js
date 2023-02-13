@@ -167,10 +167,14 @@ IslandManager.prototype.split = function(world){
             j=bodies.indexOf(eq.bodyB),
             ni=nodes[i],
             nj=nodes[j];
-        ni.neighbors.push(nj);
-        nj.neighbors.push(ni);
-        ni.equations.push(eq);
-        nj.equations.push(eq);
+        if (ni) {
+            ni.neighbors.push(nj);
+            ni.equations.push(eq);
+        }
+        if (nj) {
+            nj.neighbors.push(ni);
+            nj.equations.push(eq);
+        }
     }
 
     // Move old islands to the island pool

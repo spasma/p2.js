@@ -2,8 +2,8 @@ module.exports = Shape;
 
 var vec2 = require('../math/vec2');
 
-let PLAYER = Math.pow(2,0);
-let EVERYTHING_EXCEPT_PLAYER =  Math.pow(2,1);
+var PLAYER = Math.pow(2,0);
+var EVERYTHING_EXCEPT_PLAYER =  Math.pow(2,1);
 
 /**
  * Base class for shapes.
@@ -115,7 +115,7 @@ function Shape(options){
      * @type {Number}
      */
     this.collisionMask = options.collisionMask !== undefined ? options.collisionMask : EVERYTHING_EXCEPT_PLAYER | PLAYER;
- 
+
     /**
      * Material to use in collisions for this Shape. If this is set to null, the world will use default material properties instead.
      * @property material
